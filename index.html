@@ -74,6 +74,50 @@
 					});
 				});
 			</script>
+		</div><br><hr><br>
+		<div>
+			<h3>CSS with jQuery</h3>
+			Syntax 1 for single line: css("propery","value");<br>
+			Example:<br>
+			<code>
+				$(document).ready(function(){<br>
+					$('#removeid').click(function(){<br>
+						$('#anchorid').css('textDecoration', 'none');<br>
+					});<br>
+				});<br>
+			</code>
+			<kbd>Result:</kbd>
+			<a href="" id="anchorid">This is a link for remove it's underline just click on the button</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<button class="btn btn-success" id="removeid">remove</button>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#removeid').click(function(){
+						$('#anchorid').css('textDecoration', 'none');
+					});
+				});
+			</script><br>
+			Syntax 2 for multiple line: css({"propery" : "value", "propery" : "value", "propery" : "value",........});<br>
+			Example:<br>
+			<code>
+				$(document).ready(function(){<br>
+					$('#bacid').click(function(){<br>
+						$('#multid').css({'backgroundColor' : 'yellow','color': 'red'});<br>
+					});<br>
+				});<br>
+			</code>
+			<kbd>Result:</kbd>
+			<p id="multid">This is a example of multi-line css for see the magic click on button</p>
+			<button class="btn btn-success" id="bacid">Click me</button>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#bacid').click(function(){
+						$('#multid').css({
+							'backgroundColor' : 'yellow',
+							'color': 'red'
+						});
+					});
+				});
+			</script>
 		</div>
 	</div>
 </body>
