@@ -51,7 +51,30 @@
 					$('#firstid').text('The Changed text you are seeing');
 				});
 			});
-		</script><br><br>
+		</script><br><hr><br>
+		<div>
+			<h3>jQuery Selector</h3>
+			<p>jQuery selectors are used to find (or select) HTML elements based on their name,id,classes,type,attributes,values of attibutes and much more.</p>
+			Syntax:<br>
+			For Element:<br>
+			<code>
+				$('h6') 				// this selector will select the html h6 tag elements.<br>
+				$('#hidebtnid') 	// this selector will select the element id name<br>
+				$('.hidetxtclass') 	// this selector will select the element by class name<br> 
+				$('div:first')		// this selector will select first div of the whole document<br>
+				$('div:last')		// this selector will select last div of the whole document<br>
+			</code>
+			<kbd>Result:</kbd>
+			<h6>This paragraph will hide by using it's element name click on hide</h6>
+			<button id="hidebtn">Hide</button>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#hidebtn').click(function(){
+						$('h6').hide();
+					});
+				});
+			</script>
+		</div>
 	</div>
 </body>
 </html>
