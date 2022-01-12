@@ -44,6 +44,18 @@
 			padding: 50px;
 			display: none;
 		}
+		#seflip{
+			padding: 5px;
+			text-align: center;
+			background-color: #e5eecc;
+			border: solid 1px #c3c3c3;
+		}
+		#sepanel{
+			padding: 50px;
+			display: none;
+			background-color: #1ee8fc;
+			text-align: center;
+		}
 	</style>
 </head>
 <body>
@@ -575,6 +587,18 @@
 				});
 				$('#flip').dblclick(function(){
 					$('#panel').slideUp('slow');
+				});
+			});
+		</script>
+	</div><br><hr><br>
+	<div class="container">
+		<h3>Slide Toggle</h3>
+		<div id="seflip">Click to slide down panel</div>
+		<div id="sepanel">Hello World!<br>Again Click to Slide Up</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#seflip').click(function(){
+					$('#sepanel').slideToggle('slow');
 				});
 			});
 		</script>
