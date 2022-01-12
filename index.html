@@ -486,5 +486,54 @@
 			</script>
 		</ol>
 	</div><br><hr><br>
+	<div class="container">
+		<h3>Mouse Event</h3>
+		<ol>
+			<li>mouseenter()</li>
+			The function is executed when the mouse pointer enters the HTML element.<br>
+			Example:<br>
+			<h1 id="me">Inter mouse inside this line at entering time it's color will be change</h1>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#me').mouseenter(function() {
+						$('#me').css('color', 'red');
+					});
+				});
+			</script>
+			<li>mouseleave()</li>
+			The function is executed when the mouse pointer leaves the HTML element.<br>
+			Example:<br>
+			<h1 id="ml">Inter mouse inside this line then exit time it's color will be change</h1>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#ml').mouseleave(function() {
+						$('#ml').css('color', 'blue');
+					});
+				});
+			</script>
+			<li>mousedown()</li>
+			The function is executed when the left, middle or right mouse button is pressed down, while the mouse is over the HTML element.<br>
+			Example:<br>
+			<h1 id="md">come & select this line then  it's color will be change</h1>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#md').mousedown(function() {
+						$('#md').css('color', 'green');
+					});
+				});
+			</script>
+			<li>mouseup()</li>
+			The function is executed, when the left, middle or right mouse button is released, while the mouse is over the HTML element.<br>
+			Example:<br>
+			<h1 id="mu">come & select this line & leave selecting then it's color will be change</h1>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#mu').mouseup(function() {
+						$('#mu').css('color', 'orange');
+					});
+				});
+			</script>
+		</ol>
+	</div><br><hr><br>
 </body>
 </html>
