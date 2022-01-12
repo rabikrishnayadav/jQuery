@@ -535,5 +535,23 @@
 			</script>
 		</ol>
 	</div><br><hr><br>
+	<div class="container">
+		<h3>focus() vs blur()</h3>
+		Start Writing on the box then one message will come and exit from writing then another message will come.<br>
+		<input type="text" name="" id="textbox">
+		<span id="showdata">Welcome to Writing</span>
+		<span id="datablur">Thank you for Writing</span>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('span').css('display','none');
+				$('#textbox').focus(function() {
+					$('#showdata').css('display','inline').fadeOut(4000);
+				});
+				$('#textbox').blur(function() {
+					$('#datablur').css('display','inline').fadeOut(4000);
+				});
+			});
+		</script>
+	</div><br><hr><br>
 </body>
 </html>
