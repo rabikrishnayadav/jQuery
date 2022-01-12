@@ -6,6 +6,12 @@
 	<title>jQuery</title>
 	<link rel="stylesheet" href="bootstrap.min.css">
 	<script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+	<style type="text/css">
+		#selector_div ul li{
+			font-size: 20px;
+			font-weight: bolder;
+		}
+	</style>
 </head>
 <body>
 	<h1 class="text-center bg-warning font-weight-bold">Learn jQuery</h1>
@@ -51,74 +57,286 @@
 					$('#firstid').text('The Changed text you are seeing');
 				});
 			});
-		</script><br><hr><br>
-		<div>
-			<h3>jQuery Selector</h3>
-			<p>jQuery selectors are used to find (or select) HTML elements based on their name,id,classes,type,attributes,values of attibutes and much more.</p>
-			Syntax:<br>
-			For Element:<br>
-			<code>
-				$('h6') 				// this selector will select the html h6 tag elements.<br>
-				$('#hidebtnid') 	// this selector will select the element id name<br>
-				$('.hidetxtclass') 	// this selector will select the element by class name<br> 
-				$('div:first')		// this selector will select first div of the whole document<br>
-				$('div:last')		// this selector will select last div of the whole document<br>
-			</code>
-			<kbd>Result:</kbd>
+		</script>
+	</div><br><hr><br>
+	<div class="container" id="selector_div">
+		<h3>jQuery Selector</h3>
+		<p>jQuery selectors are used to find (or select) HTML elements based on their name,id,classes,type,attributes,values of attibutes and much more.</p>
+		Ex:<br>
+		$('div:first')		// this selector will select first div of the whole document<br>
+		$('div:last')		// this selector will select last div of the whole document<br>
+		<ul>
+			<li>Universal Selector $('*')</li>
+			Universal Selector willl select all the element which is available in the document.<br>
+			Example:<br><h6>Just click on the button then whole document color will change into gray color.</h6>
+			<button id="btn_id">Click me</button>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#btn_id').click(function(){				// this selector will select the element id name
+						$('*').css('backgroundColor',"gray");
+					});
+				});
+			</script>
+			<li>$(this) Selector</li>
+			$(this) it is a keyword used for current element.<br>
+			Example:<br><h6>Just Click on the button it's color will change into green</h6>
+			<button id="btn_clor" class="btn btn-secondary">Click me</button>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#btn_clor').click(function(){ 				// this selector will select the element id name
+						$(this).css('backgroundColor',"green");
+					});
+				});
+			</script>
+			<li>Select With Element Name</li>
+			Example:<br>
 			<h6>This paragraph will hide by using it's element name click on hide</h6>
 			<button id="hidebtn">Hide</button>
 			<script type="text/javascript">
 				$(document).ready(function(){
-					$('#hidebtn').click(function(){
-						$('h6').hide();
+					$('#hidebtn').click(function(){ // this selector will select the element id name
+						$('h6').hide(); // this selector will select the html h6 tag elements.
 					});
 				});
 			</script>
-		</div><br><hr><br>
-		<div>
-			<h3>CSS with jQuery</h3>
-			Syntax 1 for single line: css("propery","value");<br>
+			<li>Select With Element ID Name $(#id_name)</li>
 			Example:<br>
-			<code>
-				$(document).ready(function(){<br>
-					$('#removeid').click(function(){<br>
-						$('#anchorid').css('textDecoration', 'none');<br>
-					});<br>
-				});<br>
-			</code>
-			<kbd>Result:</kbd>
-			<a href="" id="anchorid">This is a link for remove it's underline just click on the button</a>&nbsp;&nbsp;&nbsp;&nbsp;
-			<button class="btn btn-success" id="removeid">remove</button>
+			<h6>This paragraph will hide by using it's element name click on hide</h6>
+			<button id="hidebtnn">Hide</button>
 			<script type="text/javascript">
 				$(document).ready(function(){
-					$('#removeid').click(function(){
-						$('#anchorid').css('textDecoration', 'none');
-					});
-				});
-			</script><br>
-			Syntax 2 for multiple line: css({"propery" : "value", "propery" : "value", "propery" : "value",........});<br>
-			Example:<br>
-			<code>
-				$(document).ready(function(){<br>
-					$('#bacid').click(function(){<br>
-						$('#multid').css({'backgroundColor' : 'yellow','color': 'red'});<br>
-					});<br>
-				});<br>
-			</code>
-			<kbd>Result:</kbd>
-			<p id="multid">This is a example of multi-line css for see the magic click on button</p>
-			<button class="btn btn-success" id="bacid">Click me</button>
-			<script type="text/javascript">
-				$(document).ready(function(){
-					$('#bacid').click(function(){
-						$('#multid').css({
-							'backgroundColor' : 'yellow',
-							'color': 'red'
-						});
+					$('#hidebtnn').click(function(){ // this selector will select the element id name
+						$('h6').hide(); // this selector will select the html h6 tag elements.
 					});
 				});
 			</script>
-		</div>
-	</div>
+			<li>Select With Element Class Name $(.class_name)</li>
+			Example:<br>
+			<h6>This paragraph will hide by using it's element name click on hide</h6>
+			<button class="hidebtn">Hide</button>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('.hidebtn').click(function(){ // this selector will select the element by it's class name
+						$('h6').hide(); // this selector will select the html h6 tag elements.
+					});
+				});
+			</script>
+			<li>Select With Attribute $('[attribute_name]')</li>
+			<div style="width: 50%; margin:auto;">
+			<ol type="1" style="list-style:none">
+				<li>index 0: Html</li>
+				<li>index 1: CSS</li>
+				<li>index 2: Html5</li>
+				<li>index 3: CSS3</li>
+				<li>index 4: JavaScript</li>
+			</ol>
+			For Hide this list just click on the button
+			<button id="btn_atr">Hide</button>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#btn_atr').click(function(){
+						$('[type]').hide('slow');     // here 'type' is a attribute name which is used in order list
+					});
+				});
+			</script>
+			<li>Select the list With Even Number</li>
+			<div style="width: 50%; margin:auto;">
+			<ol type="1" style="list-style:none">
+				<li>index 0: Html</li>
+				<li>index 1: CSS</li>
+				<li>index 2: Html5</li>
+				<li>index 3: CSS3</li>
+				<li>index 4: JavaScript</li>
+			</ol>
+			For Change the color of even number just click on the button
+			<button id="btn_ch">Change</button>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#btn_ch').click(function(){
+						$('li:even').css('color', 'red'); 
+					});
+				});
+			</script>
+			<li>Select the list With Odd Number</li>
+			<div style="width: 50%; margin:auto;">
+			<ol type="1" style="list-style:none">
+				<li>index 0: Html</li>
+				<li>index 1: CSS</li>
+				<li>index 2: Html5</li>
+				<li>index 3: CSS3</li>
+				<li>index 4: JavaScript</li>
+			</ol>
+			For Change the color of list Odd number just click on the button
+			<button id="btn_odd">Change</button>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#btn_odd').click(function(){
+						$('li:odd').css('color', 'green'); 
+					});
+				});
+			</script>
+			<li>Select the list First Child</li>
+			<div style="width: 50%; margin:auto;">
+			<ol type="1" style="list-style:none">
+				<li>index 0: Html</li>
+				<li>index 1: CSS</li>
+				<li>index 2: Html5</li>
+				<li>index 3: CSS3</li>
+				<li>index 4: JavaScript</li>
+			</ol>
+			For Change the color of list First Child just click on the button
+			<button id="btn_fst">Change</button>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#btn_fst').click(function(){
+						$('li:first-child').css('color', 'red'); 
+					});
+				});
+			</script>
+			<li>Select the list Last Child</li>
+			<div style="width: 50%; margin:auto;">
+			<ol type="1" style="list-style:none">
+				<li>index 0: Html</li>
+				<li>index 1: CSS</li>
+				<li>index 2: Html5</li>
+				<li>index 3: CSS3</li>
+				<li>index 4: JavaScript</li>
+			</ol>
+			For Change the color of list Last Child just click on the button
+			<button id="btn_lst">Change</button>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#btn_lst').click(function(){
+						$('li:last-child').css('color', 'red'); 
+					});
+				});
+			</script>
+			<li>Select the Only Current list First Child</li>
+			<div style="width: 50%; margin:auto;">
+			<ol type="1" style="list-style:none" id="thisID">
+				<li>index 0: Html</li>
+				<li>index 1: CSS</li>
+				<li>index 2: Html5</li>
+				<li>index 3: CSS3</li>
+				<li>index 4: JavaScript</li>
+			</ol>
+			For Change the color of this list First Child just click on the button
+			<button id="btn_fsth">Change</button>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#btn_fsth').click(function(){
+						$('#thisID li:first-child').css('color', 'red'); 
+					});
+				});
+			</script>
+			<li>Select the Only Current list Last Child</li>
+			<div style="width: 50%; margin:auto;">
+			<ol type="1" style="list-style:none" id="thisIDs">
+				<li>index 0: Html</li>
+				<li>index 1: CSS</li>
+				<li>index 2: Html5</li>
+				<li>index 3: CSS3</li>
+				<li>index 4: JavaScript</li>
+			</ol>
+			For Change the color of this list Last Child just click on the button
+			<button id="btn_fsthl">Change</button>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#btn_fsthl').click(function(){
+						$('#thisIDs li:last-child').css('color', 'red'); 
+					});
+				});
+			</script>
+			<li>Select the Only Current list Prticular Child</li>
+			<div style="width: 50%; margin:auto;">
+			<ol type="1" style="list-style:none" id="thisIDp">
+				<li>index 0: Html</li>
+				<li>index 1: CSS</li>
+				<li>index 2: Html5</li>
+				<li>index 3: CSS3</li>
+				<li>index 4: JavaScript</li>
+			</ol>
+			For Change the color of this list only number 2 Child just click on the button
+			<button id="btn_fsthlp">Change</button>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#btn_fsthlp').click(function(){
+						$('#thisIDp li:nth-child(2)').css('color', 'red'); 
+					});
+				});
+			</script>
+			<li>Select the Only Current list Prticular Child from the last</li>
+			<div style="width: 50%; margin:auto;">
+			<ol type="1" style="list-style:none" id="thisIDpl">
+				<li>index 0: Html</li>
+				<li>index 1: CSS</li>
+				<li>index 2: Html5</li>
+				<li>index 3: CSS3</li>
+				<li>index 4: JavaScript</li>
+			</ol>
+			For Change the color of this list only number 2 Child from last just click on the button
+			<button id="btn_fsthlpl">Change</button>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#btn_fsthlpl').click(function(){
+						$('#thisIDpl li:nth-last-child(2)').css('color', 'red'); 
+					});
+				});
+			</script>
+		</ul>	
+	</div><br><hr><br>
+	<div class="container">
+		<h3>CSS with jQuery</h3>
+		Syntax 1 for single line: css("propery","value");<br>
+		Example:<br>
+		<code>
+			$(document).ready(function(){<br>
+				$('#removeid').click(function(){<br>
+					$('#anchorid').css('textDecoration', 'none');<br>
+				});<br>
+			});<br>
+		</code>
+		<kbd>Result:</kbd>
+		<a href="" id="anchorid">This is a link for remove it's underline just click on the button</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<button class="btn btn-success" id="removeid">remove</button>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#removeid').click(function(){
+					$('#anchorid').css('textDecoration', 'none');
+				});
+			});
+		</script><br>
+		Syntax 2 for multiple line: css({"propery" : "value", "propery" : "value", "propery" : "value",........});<br>
+		Example:<br>
+		<code>
+			$(document).ready(function(){<br>
+				$('#bacid').click(function(){<br>
+					$('#multid').css({'backgroundColor' : 'yellow','color': 'red'});<br>
+				});<br>
+			});<br>
+		</code>
+		<kbd>Result:</kbd>
+		<p id="multid">This is a example of multi-line css for see the magic click on button</p>
+		<button class="btn btn-success" id="bacid">Click me</button>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#bacid').click(function(){
+					$('#multid').css({
+						'backgroundColor' : 'yellow',
+						'color': 'red'
+					});
+				});
+			});
+		</script>
+	</div><br><hr><br>
 </body>
 </html>
