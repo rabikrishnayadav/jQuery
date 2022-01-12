@@ -56,15 +56,15 @@
 			background-color: #1ee8fc;
 			text-align: center;
 		}
-		#firstDiv, #secondDiv, #thirdDiv{
+		#firstDiv, #secondDiv, #thirdDiv, #firstDiv1, #secondDiv1, #thirdDiv1{
 			width: 200px;
 			height: 100px;
 			background-color: red;
 		}
-		#secondDiv{
+		#secondDiv, #secondDiv1{
 			background-color: blue;
 		}
-		#thirdDiv{
+		#thirdDiv, #thirdDiv1{
 			background-color: green;
 		}
 	</style>
@@ -633,6 +633,23 @@
 					$('#firstDiv').fadeIn();
 					$('#secondDiv').fadeIn('slow');
 					$('#thirdDiv').fadeIn(3000);
+				});
+			});
+		</script>
+	</div><br><hr><br>
+	<div class="container">
+		<h3>FadeToggle Effect</h3>
+		<button id="btntg">Show/Hide</button><br>
+		<hr style="width:400px; float: left;"><br><br>
+		<div id="firstDiv1"></div><br>
+		<div id="secondDiv1"></div><br>
+		<div id="thirdDiv1"></div><br>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#btntg').click(function(){
+					$('#firstDiv1').fadeToggle();
+					$('#secondDiv1').fadeToggle('slow');
+					$('#thirdDiv1').fadeToggle(3000);
 				});
 			});
 		</script>
