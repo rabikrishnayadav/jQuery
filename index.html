@@ -11,6 +11,19 @@
 			font-size: 20px;
 			font-weight: bolder;
 		}
+		.main{
+			display: flex;
+		}
+		.red{
+			width: 100px;
+			height: 100px;
+			border: 1px solid black;
+		}
+		.blue{
+			width: 100px;
+			height: 100px;
+			border: 1px solid black;
+		}
 	</style>
 </head>
 <body>
@@ -363,6 +376,29 @@
 						color: 'white',
 						backgroundColor: 'black'
 					});
+				});
+			});
+		</script>
+	</div><br><hr><br>
+	<div class="container">
+		<h3>Click_Event Vs Double_Click Event</h3>
+		<div class="main">
+			<div class="red"></div>
+			<div class="red"></div>
+			<div class="red"></div>
+			<div class="blue"></div>
+			<div class="blue"></div>
+			<div class="blue"></div>
+		</div><br>
+		For Single click 3 box will filled will red Color<br>For Double click other 3 box will filled blue color.<br> 
+		<button id="boxColor" class="btn btn-primary">show Color</button>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#boxColor').click(function(){
+					$('.red').css('backgroundColor', 'red');
+				});
+				$('#boxColor').dblclick(function() {
+					$('.blue').css('backgroundColor', 'blue');
 				});
 			});
 		</script>
