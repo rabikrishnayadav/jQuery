@@ -24,6 +24,16 @@
 			height: 100px;
 			border: 1px solid black;
 		}
+		.red1{
+			width: 100px;
+			height: 100px;
+			border: 1px solid black;
+		}
+		.blue1{
+			width: 100px;
+			height: 100px;
+			border: 1px solid black;
+		}
 	</style>
 </head>
 <body>
@@ -399,6 +409,31 @@
 				});
 				$('#boxColor').dblclick(function() {
 					$('.blue').css('backgroundColor', 'blue');
+				});
+			});
+		</script>
+	</div><br><hr><br>
+	<div class="container">
+		<h3>Show and Hide Effect</h3>
+		<div class="main">
+			<div class="red1"></div>
+			<div class="red1"></div>
+			<div class="red1"></div>
+			<div class="blue1"></div>
+			<div class="blue1"></div>
+			<div class="blue1"></div>
+		</div><br>
+		For Single click all box will be hide<br>For Double click all box will again show.<br> 
+		<button id="boxColored" class="btn btn-primary">show Color</button>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.red1').css('backgroundColor', 'gold');
+				$('.blue1').css('backgroundColor', 'green');
+				$('#boxColored').click(function(){
+					$('.red1, .blue1').hide('slow');
+				});
+				$('#boxColored').dblclick(function() {
+					$('.red1, .blue1').show('slow');
 				});
 			});
 		</script>
