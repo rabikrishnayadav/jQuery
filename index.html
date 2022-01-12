@@ -338,5 +338,34 @@
 			});
 		</script>
 	</div><br><hr><br>
+	<div class="container">
+		<h3>Event</h3>
+		<strong>What are Events</strong>
+		<p>
+			All the different visitor's actions that a web page can respond to are called events.<br>An event represents the precise moment when something happens.
+		</p>
+		Example:<br>
+		.moving a mouse over an element<br>
+		.selecting a radio button<br>
+		.clicking on an element<br><br>
+
+		The tern 'fires/fired' is often used with events.<br>Ex: 'The keypress event is fired, the moment you press a key'.<br><br>
+		<strong>.click event</strong><br>Example:<br>
+		When you click on the button then paragraph color and it's backgroud color will change into black and white. it's called event.<br>
+		<p id="clkevn">
+			This is a paragraph.This is a paragraph.This is a paragraph.This is a paragraph.This is a paragraph.This is a paragraph.This is a paragraph.This is a paragraph.This is a paragraph.This is a paragraph.
+		</p>
+		<button id="pclk">Click here</button>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#pclk').click(function(){
+					$('#clkevn').css({
+						color: 'white',
+						backgroundColor: 'black'
+					});
+				});
+			});
+		</script>
+	</div><br><hr><br>
 </body>
 </html>
