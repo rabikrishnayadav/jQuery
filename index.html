@@ -56,6 +56,17 @@
 			background-color: #1ee8fc;
 			text-align: center;
 		}
+		#firstDiv, #secondDiv, #thirdDiv{
+			width: 200px;
+			height: 100px;
+			background-color: red;
+		}
+		#secondDiv{
+			background-color: blue;
+		}
+		#thirdDiv{
+			background-color: green;
+		}
 	</style>
 </head>
 <body>
@@ -599,6 +610,29 @@
 			$(document).ready(function(){
 				$('#seflip').click(function(){
 					$('#sepanel').slideToggle('slow');
+				});
+			});
+		</script>
+	</div><br><hr><br>
+	<div class="container">
+		<h3>Fading Effect</h3>
+		<button id="btnfdout">FadeOut</button>
+		<button id="btnfdin">FadeIn</button><br>
+		<hr style="width:400px; float: left;"><br><br>
+		<div id="firstDiv"></div><br>
+		<div id="secondDiv"></div><br>
+		<div id="thirdDiv"></div><br>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#btnfdout').click(function(){
+					$('#firstDiv').fadeOut();
+					$('#secondDiv').fadeOut('slow');
+					$('#thirdDiv').fadeOut(3000);
+				});
+				$('#btnfdin').click(function(){
+					$('#firstDiv').fadeIn();
+					$('#secondDiv').fadeIn('slow');
+					$('#thirdDiv').fadeIn(3000);
 				});
 			});
 		</script>
