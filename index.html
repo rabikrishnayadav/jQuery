@@ -438,5 +438,53 @@
 			});
 		</script>
 	</div><br><hr><br>
+	<div class="container">
+		<h3>Keyboard Event</h3>
+		jQuery Support 3 types of keyboard events
+		<ol>
+			<li>keypress()</li>
+			keypress() Event fired when a key is pressed on the keyboard.<br>
+			Example:<br>When you start to writing then it's color will be red<br>
+			<form>
+				<label>Username:</label>
+				<input type="text" name="name" id="keypress">
+			</form>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('input').keypress(function() {
+						$('#keypress').css('backgroundColor', 'red');
+					});
+				});
+			</script>
+			<li>keydown()</li>
+			keydown() Event fired when a key is pressed on the keyboard.<br>
+			Example:<br>When you press any keyboard button then it's color will blue<br>
+			<form id="keyd">
+				<label>Username:</label>
+				<input type="text" name="name" id="keydown">
+			</form>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#keyd input').keydown(function() {
+						$('#keydown').css('backgroundColor', 'blue');
+					});
+				});
+			</script>
+			<li>keyup()</li>
+			keyup() Event fired when a key is released on the keyboard.<br>
+			Example:<br>when you release button then it's color will be green<br>
+			<form id="keyu">
+				<label>Username:</label>
+				<input type="text" name="name" id="keyup">
+			</form>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#keyu input').keyup(function() {
+						$('#keyup').css('backgroundColor', 'green');
+					});
+				});
+			</script>
+		</ol>
+	</div><br><hr><br>
 </body>
 </html>
