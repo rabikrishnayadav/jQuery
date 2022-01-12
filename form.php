@@ -23,6 +23,11 @@
 					<div id="pwd_id"></div>
 				</div>
 				<div class="form-group">
+					<label for="password">Confirm Password: </label>
+					<input type="password" name="password" id="con_password" class="form-control">
+					<div id="con_pwd_id"></div>
+				</div>
+				<div class="form-group">
 					<input type="submit" name="submit" id="submit">
 				</div>
 			</form>
@@ -31,17 +36,35 @@
 			$(document).ready(function(){
 				$('#submit').click(function(){
 					var username = $('#username').val();
-
+					var password = $('#password').val();
+					var con_password = $('#con_password').val();
 					if (username == ''){
 						$('#user_id').html('** The username must be filled.');
 						$('#user_id').css('color','red');
 						return false;
-					}else
-					if((username.length <= 2) || (username.length => 10)){
+					}
+					if((username.length <= 2) || (username.length >= 10)){
 						$('#user_id').html('** The username length must between 3 to 10');
 						$('#user_id').css('color','red');
 						return false;
 					}
+
+					if (password == ''){
+						$('#pwd_id').html('** The password must be filled.');
+						$('#pwd_id').css('color','red');
+						return false;
+					}
+					if ((password.length <= 2) || (password.length >= 10)){
+						$('#pwd_id').html('** The password lenght must between 3 to 10');
+						$('#pwd_id').css('color','red');
+						return false;
+					}
+					
+					if (con_password != password){
+						$('#con_pwd_id').html('** password are not matching');
+						$('#con_pwd_id').css('color','red');
+						return false;
+						}
 				});
 			});
 		</script>
