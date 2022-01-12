@@ -67,6 +67,13 @@
 		#thirdDiv, #thirdDiv1{
 			background-color: green;
 		}
+		.animateDiv{
+			width: 100px;
+			height: 100px;
+			position: relative;
+			background-color: red;
+			border: 1px solid black;
+		}
 	</style>
 </head>
 <body>
@@ -650,6 +657,41 @@
 					$('#firstDiv1').fadeToggle();
 					$('#secondDiv1').fadeToggle('slow');
 					$('#thirdDiv1').fadeToggle(3000);
+				});
+			});
+		</script>
+	</div><br><hr><br>
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-2">
+				<h3>Animation</h3>
+				<button id="stan">Start</button><br><br>
+			</div>
+			<div class="col-xl-10">
+				<div class="animateDiv"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#stan').click(function(){
+					$('.animateDiv').animate({
+						left  : 500,
+						width :100/2,
+						height:100/2
+					});
+					$('.animateDiv').animate({
+						top  : 200,
+					});
+					$('.animateDiv').animate({
+						left  : 0,
+						top   :200
+					});
+					$('.animateDiv').animate({
+						left  : 0,
+						top   :0,
+						width :100,
+						height:100
+					});
 				});
 			});
 		</script>
