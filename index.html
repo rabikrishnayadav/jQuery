@@ -74,6 +74,12 @@
 			background-color: red;
 			border: 1px solid black;
 		}
+		#measure{
+			width: 400px;
+			height: 200px;
+			border: 10px solid red;
+			background-color: green;
+		}
 	</style>
 </head>
 <body>
@@ -692,6 +698,25 @@
 						width :100,
 						height:100
 					});
+				});
+			});
+		</script>
+	</div><br><hr><br>
+	<div class="container">
+		<h3>Dimension Method</h3>
+		<div id="measure"></div><br>
+		<button id="ckwh" class="btn btn-primary"> Check </button>&nbsp;&nbsp;
+		<input type="text" name="" id="width">&nbsp;&nbsp;
+		<input type="text" name="" id="height">
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#ckwh').click(function(){
+					var x ='';
+					var y ='';
+					x += 'The width of Div is' + $('#measure').width() + 'px.';
+					y += 'The height of the Div is ' + $('#measure').height() +'px.';
+					$('#width').val(x);
+					$('#height').val(y);
 				});
 			});
 		</script>
