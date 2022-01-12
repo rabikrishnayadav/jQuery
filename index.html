@@ -34,6 +34,16 @@
 			height: 100px;
 			border: 1px solid black;
 		}
+		#panel, #flip{
+			padding: 5px;
+			text-align: center;
+			background-color: #e5eecc;
+			border: solid 1px #c3c3c3;
+		}
+		#panel{
+			padding: 50px;
+			display: none;
+		}
 	</style>
 </head>
 <body>
@@ -549,6 +559,22 @@
 				});
 				$('#textbox').blur(function() {
 					$('#datablur').css('display','inline').fadeOut(4000);
+				});
+			});
+		</script>
+	</div><br><hr><br>
+	<div class="container">
+		<h3>Slider Effects</h3>
+		SlideUp and SlideDown Effect<br>
+		<div id="flip">Click to slide down panel</div>
+		<div id="panel">Hello World!<br>Double Click to Slide Up</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#flip').click(function(){
+					$('#panel').slideDown('slow');
+				});
+				$('#flip').dblclick(function(){
+					$('#panel').slideUp('slow');
 				});
 			});
 		</script>
