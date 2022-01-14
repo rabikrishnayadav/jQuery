@@ -44,7 +44,9 @@
 				$('#datepicker').datepicker({
 					dateFormat:'dd-mm-yy',
 					changeMonth: true,
-					changeYear: true
+					changeYear: true,
+					maxDate: '2Y',		// this will provide only 2 year ahead date from the submit time, respectly we can set W for week, 
+					minDate: '-3M'		// this will provide only 3 month before date from the submit time
 				});
 				$('#submit').click(function(){
 					var username = $('#username').val();
