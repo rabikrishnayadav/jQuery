@@ -5,7 +5,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>jQuery Second Page</title>
 	<link rel="stylesheet" href="bootstrap.min.css">
-	<script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+	<link rel="stylesheet" href="jquery-ui.min.css">
+	<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="jquery-ui.min.js"></script>
 </head>
 <body><h1 class="text-center font-weight-bold bg-warning">Second Page Of jQuery</h1>
 	<div class="container">
@@ -28,12 +30,22 @@
 					<div id="con_pwd_id"></div>
 				</div>
 				<div class="form-group">
+					<label for="dob">Date of Birth: </label>
+					<input type="text" name="dob" id="datepicker" class="form-control">
+					<div id="con_pwd_id"></div>
+				</div>
+				<div class="form-group">
 					<input type="submit" name="submit" id="submit">
 				</div>
 			</form>
 		</div>
 		<script type="text/javascript">
 			$(document).ready(function(){
+				$('#datepicker').datepicker({
+					dateFormat:'dd-mm-yy',
+					changeMonth: true,
+					changeYear: true
+				});
 				$('#submit').click(function(){
 					var username = $('#username').val();
 					var password = $('#password').val();
